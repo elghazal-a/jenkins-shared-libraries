@@ -40,7 +40,7 @@ def call(String buildResult, String msg) {
     dir('./ansible') {
       ansiColor('xterm') {
         ansiblePlaybook(
-          inventoryPath: 'inventories/null.yml'
+          inventoryPath: 'inventories/null.yml',
           playbook: 'common/helpers/notif_telegram.yml', 
           extras: "-e notif_msg=${msq} -e deploy_service=${service} -e notif_msg_format='plain'",
           vaultCredentialsId: 'ansible_vault_password',
